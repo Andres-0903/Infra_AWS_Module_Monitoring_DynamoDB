@@ -13,7 +13,12 @@ resource "aws_cloudwatch_metric_alarm" "dynamodb_write_throttle_events" {
   threshold           = var.dynamodb_write_throttle_events.threshold
   alarm_description   = "Eventos de WriteThrottle en las tablas DynamoDB"
 
-  tags = local.common_tags
+  tags = merge({
+    name = "${var.project}-${var.name_service}-${var.purpose}-${var.bdo.environment}"
+    },
+    var.resource_aditional_tags != null ? var.resource_aditional_tags : {},
+    var.resource_tags
+  )
 
   dimensions = merge(local.common_dimensions, { TableName = each.value })
 
@@ -35,7 +40,12 @@ resource "aws_cloudwatch_metric_alarm" "dynamodb_system_errors" {
   threshold           = var.dynamodb_system_errors.threshold
   alarm_description   = "Total de Errores en las tablas DynamoDB"
 
-  tags = local.common_tags
+  tags = merge({
+    name = "${var.project}-${var.name_service}-${var.purpose}-${var.bdo.environment}"
+    },
+    var.resource_aditional_tags != null ? var.resource_aditional_tags : {},
+    var.resource_tags
+  )
 
   dimensions = merge(local.common_dimensions, { TableName = each.value })
 
@@ -57,7 +67,12 @@ resource "aws_cloudwatch_metric_alarm" "dynamodb_success_fulrequest_latency" {
   threshold           = var.SuccessfulRequestLatency.threshold
   alarm_description   = "Total latencia por peticion hacia la tabla"
 
-  tags = local.common_tags
+  tags = merge({
+    name = "${var.project}-${var.name_service}-${var.purpose}-${var.bdo.environment}"
+    },
+    var.resource_aditional_tags != null ? var.resource_aditional_tags : {},
+    var.resource_tags
+  )
 
   dimensions = merge(local.common_dimensions, { TableName = each.value })
 
@@ -79,7 +94,12 @@ resource "aws_cloudwatch_metric_alarm" "dynamodb_returned_bytes" {
   threshold           = var.ReturnedBytes.threshold
   alarm_description   = "Bytes devueltos por las operaciones de la tabla"
 
-  tags = local.common_tags
+  tags = merge({
+    name = "${var.project}-${var.name_service}-${var.purpose}-${var.bdo.environment}"
+    },
+    var.resource_aditional_tags != null ? var.resource_aditional_tags : {},
+    var.resource_tags
+  )
 
   dimensions = merge(local.common_dimensions, { TableName = each.value })
 

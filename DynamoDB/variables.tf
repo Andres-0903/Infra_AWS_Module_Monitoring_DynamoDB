@@ -120,3 +120,26 @@ variable "tag_cost" {
 variable "tag_code_app" {
   type = number
 }
+
+variable "name_service" {
+  type    = string
+  default = "lambda"
+}
+
+variable "purpose" {
+  type = string
+}
+
+variable "resource_aditional_tags" {
+  type        = map(string)
+  description = "TTags adicionales no obligatorias"
+  default     = {}
+
+}
+
+variable "resource_tags" {
+  type        = map(string)
+  description = "Tags BdO -Tags Aval"
+  default     = {}
+
+}
