@@ -95,13 +95,11 @@ module "dynamo_monitoring" {
 
 ## 🤝 Contribuir
 
-1. Haz un fork del repositorio.
-2. Crea una rama (`git checkout -b feature/nueva-funcionalidad`)
-3. Realiza tus cambios y haz commit.
-4. Abre un Pull Request.
 
 ---
 
-## 📝 Licencia
+## 📝 Resource
 
-MIT © [Andres Arenas](https://github.com/Andres-0903)
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html
+
+
