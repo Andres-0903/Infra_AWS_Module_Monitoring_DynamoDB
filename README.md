@@ -93,11 +93,6 @@ module "dynamo_monitoring" {
 
 ---
 
-## 🤝 Contribuir
-
-
----
-
 ## 📝 Resource
 
 https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/metrics-dimensions.html
